@@ -1,6 +1,6 @@
 # React + Vite
 
-# 合成事件 + 防抖
+# 合成事件 + 防抖 + hooks + contextAPI
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
