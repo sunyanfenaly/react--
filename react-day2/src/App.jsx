@@ -1,40 +1,40 @@
-import { Component } from'react';
-import './App.scss'
+import React, { useState } from 'react'
+import Select from './components/Select'
+const App = () => {
 
-class App extends Component{
-  state = {
-    count: 0,
-    title: '标题'
-  }
+  const addressList = [
+    { id: 1, label: '北京', value: 'beijing' },
+    { id: 2, label: '上海', value: 'shanghai' },
+    { id: 3, label: '广州', value: 'guangzhou' },
+    { id: 4, label: '深圳', value: 'shenzhen' },
+    { id: 5, label: '杭州', value: 'hangzhou' },
+    { id: 6, label: '南京', value: 'nanjing' },
+    { id: 7, label: '苏州', value: 'suzhou' },
+    { id: 9, label: '天津', value: 'tianjin' },
+    { id: 10, label: '青岛', value: 'qingdao' }
+  ]
 
-// 合成事件: 
-  // 1. React 自己实现了一套事件注册、分发的机制，统一了不同浏览器之间事件系统的差异。
-  // 2. React 元素上声明的事件最终绑定到了 document 这个 DOM 节点上，（react18之后是 root节点）
-  // 而不是 React 组件对应的 DOM 节点。只有document这个节点上面才绑定了DOM原生事件，其他节点没有绑定事件。
-  // 这样简化了DOM原生事件，减少了内存开销。
-    clickBox = (e) => {
-      // e: react包装之后的合成事件对象
-      console.log('点击元素', e)
-      // e.nativeEvent: 获取原始事件对象
-      console.log('原始事件对象', e.nativeEvent)
-    }
+  const [ form, setForm ] = useState({
+    selectValue: [],
+    userValue: ''
+  })
 
-    add () {
-      console.log(this)
-    } 
-  render() {
-    
-    return (
-      <div className='app'>
-            <h2>{this.state.title}</h2>
-            <p>count: {this.state.count}</p>
-            <button onClick={this.add.bind(this)}>+</button>
-            {/* 合成事件 */}
-            <div onClick={this.clickBox} className="box"></div>
-      </div>
-    )
-  }
-
+  return (
+    <div className="App">
+      <h4>xm-select下拉框多选带搜索实例</h4>
+      
+      <Select 
+        options={addressList}
+        value={form.selectValue}
+        onChange={selectValue => {
+          setForm({...form, selectValue})
+          console.log( '选中的数据',selectValue)
+        }}
+      
+      
+      />
+    </div>
+  )
 }
 
-export default App;
+export default App
