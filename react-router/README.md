@@ -18,12 +18,12 @@
 
 
 
-# 以及路由
-# 嵌套路由（多层路由的嵌套）
-# useRoutes 将路由抽离出来，单独写一个文件
-# 路由参数传递
-# 等装高阶组件（HOC） 模拟路由拦截器  
-# 组件异步加载（懒加载）
+## 基础路由配置
+## 嵌套路由（多层路由的嵌套）
+## useRoutes 将路由抽离出来，单独写一个文件
+## 路由参数传递
+## 等装高阶组件（HOC） 模拟路由拦截器  
+## 组件异步加载（懒加载）
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
