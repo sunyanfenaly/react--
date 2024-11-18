@@ -1,23 +1,63 @@
-import React from 'react'
-import Child1 from './components/Child1'
-import Child2 from './components/Child2'
-import './App.scss'
+import { useState, useRef, useEffect } from 'react'
+
+
+import Loading from './components/loading/loading'
+import SearchHeader from './components/searchHeader/SearchHeader'
+import DefaultSearch from './components/defaultSearch/defaultSearch'
+import SearchResult from './components/searchResult/SearchResult'
+import SearchSuggest from './components/searchSuggest/SearchSuggest'
+import { useUpdate } from './hooks/useUpdate'
+
 const App = () => {
 
-  const [show, setShow] = React.useState(true)
-  const [tit, setTit] = React.useState('Hello React!')
+  const [ historyList, setHistoryList  ] = useState(JSON.parse(localStorage.getItem('historyList'))|| [] )
+  const [ keywords, setKeywords ] = useState('')
+  const [type , setType  ] = useState(0)
+  const onSelect =(keywords) =>{
+    setKeywords(keywords)
+    localStorage.setItem('historyList', JSON.stringify([...historyList, keywords]))
+  }
 
+  const delHistoryList = () =>{
+    setHistoryList([])
+    localStorage.setItem('historyList', JSON.stringify(historyList))
+  }
+
+  const startSearch = () =>{
+      setType(2)
+
+  }
+
+  // useUpdate(() =>{
+  //      historyList.current.push(keywords)
+  //     localStorage.setItem('historyList', JSON.stringify(historyList.current))
+  // }, [historyList.current])
+
+  const renderMain = () =>{
+     switch(type){
+       case 0:
+        return <DefaultSearch historyList={historyList} onChange= { delHistoryList } />
+        case 1:
+        return <SearchSuggest keywords={keywords} onChange={onSelect}  /> 
+        case 2:
+        return <SearchResult />
+     }
+  }
+  
   return (
-    <div className='App'>
-      <h1>{tit}</h1>
-      <input type="text" value={tit} onChange={(e) => {setTit(e.target.value)}} />
-      <button onClick={() => setShow(!show)}>Toggle Child1</button>
-      {
-        show && <Child1 tit={tit} />
-      }
-      <Child2 />
+      <div className='app'>
+          <SearchHeader  onChange={keywords =>{
+            if(keywords === ''){
+              setType(0)
+            }else{
+              setType(1)
+            }
+            setKeywords(keywords)
+          }} keywords={keywords} />
 
-    </div>
+          {renderMain()}
+          
+      </div>
   )
 }
 

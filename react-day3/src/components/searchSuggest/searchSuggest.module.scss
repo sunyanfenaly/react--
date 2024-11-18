@@ -1,0 +1,13 @@
+.suggest{
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+    background-color: #fff;
+}
+.suggestList{
+    li{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+    }
+}

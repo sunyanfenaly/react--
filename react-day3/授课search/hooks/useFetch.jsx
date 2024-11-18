@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 
-axios.defaults.baseURL = 'http://121.89.213.194:5001'
+axios.defaults.baseURL = 'https://zyxcl.xyz/music/api'
 // 自定义hook
     // 命名以 use 开头的
 export const useFetch = ({
