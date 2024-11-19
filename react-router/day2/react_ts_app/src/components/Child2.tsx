@@ -1,18 +1,26 @@
-import React from 'react'
+import { Component } from 'react'
+import { useSelector, useDispatch,connect } from 'react-redux'
 
-interface Props {
-  tit: string,
-  setTit: (newTit: string) => void
+
+class Child2 extends Component {
+  
+  render() {
+    console.log(this.props)
+    return (
+      <div className='box'>
+        <h2>Child2</h2>
+        <p>Count: {this.props.count}</p>
+        <button onClick={() => this.props.dispatch({ type:'reduce'})}>改变count --</button>
+      </div>
+    )
+  }
 }
 
 
-const Child2 = (props: Props) => {
-  return (
-    <div className='box'>
-      <h2>我是父组件传递过来的标题：{props.tit}</h2>
-      <button onClick={() => props.setTit('我是子组件改变的标题')}>改变tit </button>
-    </div>
-  )
+const mapStateToProps = state => {
+  console.log(state)
+  return {
+    count: state.count
+  }
 }
-
-export default Child2
+export default connect(mapStateToProps)(Child2)

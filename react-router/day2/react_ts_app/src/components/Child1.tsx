@@ -1,34 +1,21 @@
-import React, { Component } from 'react'
 
-interface Props {
-  count: number,
-  setCount: (count: number) => void
-}
-interface State {
-  flag: boolean,
-  number: number
-}
+import { useSelector, useDispatch } from 'react-redux'
 
 
-
-class Child1 extends Component<Props, State> {
-
-  state = {
-    flag: true,
-    number: 10
-  }
-  
-
-  render() {
-    console.log(this.props)
-    return (
-      <div>
-        <h1>Child1</h1>
-        <p>Count: {this.props.count}</p>
-        <button onClick={() => this.props.setCount(this.props.count + 1)}>改变count，触发props更新</button>
-      </div>
-    )
-  }
+const Child1 = () => {
+  const dispatch = useDispatch()
+  const name = useSelector(state => state.name)
+  return (
+    <div className='box'>
+      <h3>{name}</h3>
+      <button onClick={() => {
+        dispatch({
+          type:'changeName',
+          payload: Math.random().toFixed(2)
+        })
+      }}>改变count ++ </button>
+    </div>
+  )
 }
 
 export default Child1
