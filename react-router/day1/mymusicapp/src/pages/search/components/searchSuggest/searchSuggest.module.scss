@@ -1,0 +1,16 @@
+.suggest {
+  background: #fff;
+  p {
+    line-height: 40px;
+    padding: 0 15px;
+    color: blue;
+    border-bottom: 1px solid #ddd;
+  }
+  ul {
+    li {
+      line-height: 40px;
+      border-bottom: 1px solid #ddd;
+      padding: 0 15px;
+    }
+  }
+}
