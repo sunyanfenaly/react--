@@ -1,0 +1,46 @@
+.questionList {
+    flex: 1;
+}
+
+.titleBox{
+    background-color: #fff;
+    margin-bottom: 5px;
+    .subtitle,
+    .title{
+        height: 47px;
+        line-height: 47px;
+        padding: 5px 50px;
+        text-align: center;
+        p{
+            height: 100%;
+            line-height: 42px;
+            font-size: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            &:hover {
+                background-color: #FDF9CD;
+            }
+        }
+        input {
+            text-align: center;
+            background-color: #FDF9CD;
+            border-radius: 2px;
+        }
+        
+    }
+    
+
+    .subtitle{
+        text-align: left;
+        border-top: 1px solid #EBEBEB;
+        padding: 0 50px;
+        p{
+            border-left: 1px solid #EBEBEB;
+            padding: 0px 11px;
+            font-size: 14px;
+        }
+        input {
+            text-align: left;
+        }
+    }
+}

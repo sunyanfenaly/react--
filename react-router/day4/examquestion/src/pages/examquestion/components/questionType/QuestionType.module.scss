@@ -1,0 +1,46 @@
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.questionType {
+    width: 120px;
+    max-height: 260px;
+    margin-right: 10px;
+    margin-right: 5px;
+
+    h3 {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+        background-color: #fff;
+    }
+
+    .questionTypeList {
+        transition: height 0.3s linear;
+        background-color: #fff;
+        overflow: hidden;
+        li {
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            border-top: 1px solid #eaedf1;
+            padding: 0 10px;
+            cursor: pointer;
+            // &:hover {
+            //     animation-name: zoomIn; /* 指定动画名称 */
+            //     animation-duration: 0.5s; /* 动画持续时间 */
+            //     animation-timing-function: ease; /* 动画速度曲线 */
+            //     animation-fill-mode: forwards; /* 动画完成后保持最后一帧状态 */
+            //     transition: transform 0.5s ease; /* 平滑过渡效果 */
+            // }
+        }
+    }
+}

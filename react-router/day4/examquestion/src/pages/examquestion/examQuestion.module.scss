@@ -1,0 +1,50 @@
+
+.examQuestion{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    display: flex;
+}
+
+
+.questionType{
+    width: 120px;
+    max-height: 260px;
+    margin-right: 10px;
+    background-color: #fff;
+    margin-right: 5px;
+    h3{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        user-select: none;
+        cursor: pointer;
+    }
+    .questionTypeList{
+        transition:  height 0.3s ease-in-out;
+        li{
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            border-top: 1px solid #eaedf1;
+            padding: 0 10px;
+        }
+    }
+}
+
+
+.submitbox{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    .submitBtn {
+        background-color: #09c;
+        border: 1px solid #09c;
+        &:hover {
+            background-color: #008FBF;
+            border: 1px solid #008FBF;
+        }
+    }
+}

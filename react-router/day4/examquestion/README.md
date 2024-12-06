@@ -1,22 +1,5 @@
 # React + TypeScript + Vite
 
-
-
-
-## 使用redux-toolkit 同步操作
-## 使用redux-toolkit 异步操作
-## 定义ts类型
-## 封装自定义的hooks
-  ## 封装自定义的reducer
-  ## 封装自定义的action
-
-
-
-
-
-
-
-
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

@@ -1,0 +1,19 @@
+.header {
+    margin-bottom: 5px;
+}
+
+.formItem {
+    border-radius: 3px;
+    width: 180px;
+    font-size: 10px;
+
+    &:last-of-type {
+        flex: 1;
+        margin-right: 100px;
+    }
+
+    .antSelectSelector {
+        border-radius: 3px;
+        border: 1px solid #ccc !important;
+    }
+}
